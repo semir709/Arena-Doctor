@@ -1,8 +1,6 @@
 import 'package:arena/feauters/auth/services/auth_service.dart';
 import 'package:arena/feauters/auth/widgets/auth_input.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -39,16 +37,11 @@ class _AuthScreenState extends State<AuthScreen> {
                     child: Container(
                   width: 200,
                   height: 150,
-                  /*decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(50.0)),*/
                   child: Image.asset('assets/images/logo.png'),
-                ) //Image.asset('asset/images/flutter-logo.png')),
-                    ),
+                )),
               ),
               Padding(
-                //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: AuthInput(
                   controller: _email,
                   hintText: 'Enter email address',
@@ -56,9 +49,8 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                       left: 15.0, right: 15.0, top: 15, bottom: 0),
-                  //padding: EdgeInsets.symmetric(horizontal: 15),
                   child: AuthInput(
                     controller: _password,
                     hintText: 'Enter passowrd',
@@ -78,8 +70,6 @@ class _AuthScreenState extends State<AuthScreen> {
                     if (_signInFormKey.currentState!.validate()) {
                       signInUser();
                     }
-                    // Navigator.push(
-                    //     context, MaterialPageRoute(builder: (_) => HomePage()));
                   },
                   style: OutlinedButton.styleFrom(
                     backgroundColor: const Color(0xFF04E762),

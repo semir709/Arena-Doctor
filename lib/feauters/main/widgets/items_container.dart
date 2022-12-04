@@ -13,24 +13,28 @@ class ItemsContainer extends StatelessWidget {
           title,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        SizedBox(
-          height: 10,
-        ),
-        ItemMain(),
-        SizedBox(
-          height: 10,
-        ),
-        ItemMain(),
-        SizedBox(
-          height: 10,
-        ),
-        ItemMain(),
-        SizedBox(
-          height: 10,
-        ),
-        ItemMain(),
-        SizedBox(
-          height: 10,
+        Container(
+          child: Column(children: const [
+            SizedBox(
+              height: 10,
+            ),
+            ItemMain(),
+            SizedBox(
+              height: 10,
+            ),
+            ItemMain(),
+            SizedBox(
+              height: 10,
+            ),
+            ItemMain(),
+            SizedBox(
+              height: 10,
+            ),
+            ItemMain(),
+            SizedBox(
+              height: 10,
+            ),
+          ]),
         ),
       ],
     );
