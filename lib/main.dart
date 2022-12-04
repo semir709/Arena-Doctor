@@ -1,4 +1,5 @@
 import 'package:arena/feauters/auth/screens/auth_screen.dart';
+import 'package:arena/router.dart';
 import 'package:flutter/material.dart';
 // import 'HomePage.dart';
 
@@ -24,6 +25,9 @@ class LoginDemo extends StatefulWidget {
 class _LoginDemoState extends State<LoginDemo> {
   @override
   Widget build(BuildContext context) {
-    return AuthScreen();
+    return MaterialApp(
+        title: 'Amazon clone',
+        onGenerateRoute: ((settings) => generateRoute(settings)),
+        home: const AuthScreen());
   }
 }
