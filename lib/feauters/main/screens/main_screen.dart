@@ -16,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70),
+        preferredSize: const Size.fromHeight(70),
         child: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
@@ -25,7 +25,41 @@ class _MainScreenState extends State<MainScreen> {
               'assets/images/logo.png',
               width: 200,
             ),
-            Image.asset('assets/images/btn_logout.png'),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title: const Text(
+                            'Log out',
+                            style: TextStyle(
+                                fontSize: 40, fontWeight: FontWeight.bold),
+                          ),
+                          content: Column(
+                            children: [
+                              const Text(
+                                'Are you sure you want to log out from the console?',
+                                style: TextStyle(
+                                    fontSize: 17, fontWeight: FontWeight.bold),
+                              ),
+                              Row(
+                                children: [
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: const Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: const Text('Yes'),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ));
+              },
+              child: Image.asset('assets/images/btn_logout.png'),
+            ),
           ]),
         ),
       ),
@@ -41,10 +75,10 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ],
               ),
-              ItemsContainer(
+              const ItemsContainer(
                 title: 'Patient list for today',
               ),
-              ItemsContainer(
+              const ItemsContainer(
                 title: 'Tomorrow',
               ),
             ],
